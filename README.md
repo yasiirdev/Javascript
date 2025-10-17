@@ -1,11 +1,13 @@
 # 🚀 Professional JavaScript Guide (Latest Version)
 
 ## Introduction
+
 JavaScript (ECMAScript 2023+) is a modern, versatile language for web, server, and app development. It powers interactive websites, APIs, and more.
 
 ---
 
 ## Table of Contents
+
 1. What is JavaScript?
 2. Variables & Data Types
 3. Operators
@@ -18,30 +20,33 @@ JavaScript (ECMAScript 2023+) is a modern, versatile language for web, server, a
 10. Asynchronous JavaScript
 11. Error Handling
 12. Modules
-13. Classes & OOP
+13. classNamees & OOP
 14. Best Practices
 
 ---
 
 ## 1. What is JavaScript?
+
 JavaScript is a high-level, interpreted language that runs in browsers and on servers (Node.js). It supports functional, object-oriented, and event-driven programming.
 
 ---
 
 ## 2. Variables & Data Types
+
 ```javascript
 let name = "Alice"; // String
-const age = 30;      // Number
+const age = 30; // Number
 let isActive = true; // Boolean
-let user = null;     // Null
-let data;            // Undefined
-let big = 123n;      // BigInt
+let user = null; // Null
+let data; // Undefined
+let big = 123n; // BigInt
 let sym = Symbol("id"); // Symbol
 ```
 
 ---
 
 ## 3. Operators
+
 - Arithmetic: `+`, `-`, `*`, `/`, `%`, `**`
 - Assignment: `=`, `+=`, `-=`
 - Comparison: `==`, `===`, `!=`, `!==`, `<`, `>`
@@ -52,7 +57,9 @@ let sym = Symbol("id"); // Symbol
 ---
 
 ## 4. Control Flow
+
 ### Conditionals
+
 ```javascript
 if (age > 18) {
   console.log("Adult");
@@ -60,7 +67,9 @@ if (age > 18) {
   console.log("Minor");
 }
 ```
+
 ### Loops
+
 ```javascript
 for (let i = 0; i < 5; i++) {
   console.log(i);
@@ -68,35 +77,42 @@ for (let i = 0; i < 5; i++) {
 for (const fruit of fruits) {
   console.log(fruit);
 }
-fruits.forEach(fruit => console.log(fruit));
+fruits.forEach((fruit) => console.log(fruit));
 ```
 
 ---
 
 ## 5. Functions
+
 ```javascript
 function greet(name) {
   return `Hello, ${name}!`;
 }
 const add = (a, b) => a + b;
-const double = x => x * 2;
+const double = (x) => x * 2;
 ```
 
 ---
 
 ## 6. Arrays & Objects
+
 ### Arrays
+
 ```javascript
 const fruits = ["Apple", "Banana", "Cherry"];
 fruits.push("Mango");
 const [first, ...rest] = fruits;
 ```
+
 ### Objects
+
 ```javascript
 const user = {
   name: "Alice",
   age: 30,
-  greet() { return `Hi, ${this.name}`; }
+  greet() {
+    return `Hi, ${this.name}`;
+  },
 };
 const { name, age } = user;
 ```
@@ -104,6 +120,7 @@ const { name, age } = user;
 ---
 
 ## 7. DOM Manipulation
+
 ```javascript
 const title = document.getElementById("main-title");
 title.textContent = "Welcome!";
@@ -113,6 +130,7 @@ title.style.color = "blue";
 ---
 
 ## 8. Events
+
 ```javascript
 document.querySelector("button").addEventListener("click", () => {
   alert("Button clicked!");
@@ -122,15 +140,16 @@ document.querySelector("button").addEventListener("click", () => {
 ---
 
 ## 9. ES6+ & Latest Features
+
 - Arrow Functions
 - Template Literals
 - Destructuring
 - Spread/Rest Operators
-- Classes
+- classNamees
 - Modules (`import`/`export`)
 - Optional Chaining (`?.`)
 - Nullish Coalescing (`??`)
-- Private Fields in Classes (`#field`)
+- Private Fields in classNamees (`#field`)
 - Top-level Await
 - Array `at()` method
 - Object.hasOwn()
@@ -141,19 +160,25 @@ document.querySelector("button").addEventListener("click", () => {
 ---
 
 ## 10. Asynchronous JavaScript
+
 ### Callbacks
+
 ```javascript
 setTimeout(() => {
   console.log("Done!");
 }, 1000);
 ```
+
 ### Promises
+
 ```javascript
 fetch("/api/data")
-  .then(res => res.json())
-  .then(data => console.log(data));
+  .then((res) => res.json())
+  .then((data) => console.log(data));
 ```
+
 ### Async/Await
+
 ```javascript
 async function getData() {
   const res = await fetch("/api/data");
@@ -165,6 +190,7 @@ async function getData() {
 ---
 
 ## 11. Error Handling
+
 ```javascript
 try {
   // risky code
@@ -178,18 +204,22 @@ try {
 ---
 
 ## 12. Modules
+
 ```javascript
 // math.js
-export function add(a, b) { return a + b; }
+export function add(a, b) {
+  return a + b;
+}
 // app.js
 import { add } from "./math.js";
 ```
 
 ---
 
-## 13. Classes & OOP
+## 13. classNamees & OOP
+
 ```javascript
-class Animal {
+className Animal {
   #privateField = "secret";
   constructor(name) {
     this.name = name;
@@ -198,7 +228,7 @@ class Animal {
     console.log(`${this.name} makes a sound.`);
   }
 }
-class Dog extends Animal {
+className Dog extends Animal {
   speak() {
     console.log(`${this.name} barks.`);
   }
@@ -208,6 +238,7 @@ class Dog extends Animal {
 ---
 
 ## 14. Best Practices
+
 - Use `const` and `let` (avoid `var`)
 - Write clean, readable code
 - Use strict equality (`===`)
