@@ -1,7 +1,7 @@
-
 # JavaScript API Guide - From Basics to Advanced
 
 ## Table of Contents
+
 1. [Basics of APIs](#basics-of-apis)
 2. [HTTP Methods](#http-methods)
 3. [Fetch API](#fetch-api)
@@ -13,6 +13,7 @@
 ## Getting Started
 
 To follow this guide, you need:
+
 - Basic knowledge of JavaScript
 - A modern web browser
 - A code editor
@@ -24,60 +25,64 @@ Let's start with a simple example:
 
 ```javascript
 // Basic API call
-fetch('https://api.example.com/data')
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error('Error:', error));
+fetch("https://api.example.com/data")
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error("Error:", error));
 ```
 
 ## Common HTTP Methods
 
 ### GET Request
+
 ```javascript
 // Fetching data
 async function getData() {
-  const response = await fetch('https://api.example.com/users');
+  const response = await fetch("https://api.example.com/users");
   const data = await response.json();
   return data;
 }
 ```
 
 ### POST Request
+
 ```javascript
 // Creating data
 async function createUser(userData) {
-  const response = await fetch('https://api.example.com/users', {
-    method: 'POST',
+  const response = await fetch("https://api.example.com/users", {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(userData)
+    body: JSON.stringify(userData),
   });
   return await response.json();
 }
 ```
 
 ### PUT Request
+
 ```javascript
 // Updating data
 async function updateUser(id, userData) {
   const response = await fetch(`https://api.example.com/users/${id}`, {
-    method: 'PUT',
+    method: "PUT",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(userData)
+    body: JSON.stringify(userData),
   });
   return await response.json();
 }
 ```
 
 ### DELETE Request
+
 ```javascript
 // Deleting data
 async function deleteUser(id) {
   const response = await fetch(`https://api.example.com/users/${id}`, {
-    method: 'DELETE'
+    method: "DELETE",
   });
   return response.ok;
 }
@@ -86,9 +91,10 @@ async function deleteUser(id) {
 ## Advanced Concepts
 
 ### Authentication
+
 ```javascript
 // Using JWT Token
-class AuthenticatedAPI {
+className AuthenticatedAPI {
   constructor(baseURL, token) {
     this.baseURL = baseURL;
     this.token = token;
@@ -108,29 +114,31 @@ class AuthenticatedAPI {
 ```
 
 ### Error Handling
+
 ```javascript
 async function safeAPICall(url, options = {}) {
   try {
     const response = await fetch(url, options);
-    
+
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    
+
     const data = await response.json();
     return { success: true, data };
   } catch (error) {
-    return { 
-      success: false, 
-      error: error.message
+    return {
+      success: false,
+      error: error.message,
     };
   }
 }
 ```
 
 ### Rate Limiting
+
 ```javascript
-class RateLimitedAPI {
+className RateLimitedAPI {
   constructor(requestsPerSecond = 2) {
     this.queue = [];
     this.processing = false;
@@ -167,8 +175,9 @@ class RateLimitedAPI {
 ## Real World Examples
 
 ### Weather API Integration
+
 ```javascript
-class WeatherService {
+className WeatherService {
   constructor(apiKey) {
     this.apiKey = apiKey;
     this.baseURL = 'https://api.weatherapi.com/v1';
@@ -179,7 +188,7 @@ class WeatherService {
       const response = await fetch(
         `${this.baseURL}/current.json?key=${this.apiKey}&q=${city}`
       );
-      
+
       if (!response.ok) {
         throw new Error('Weather data unavailable');
       }
@@ -201,7 +210,7 @@ class WeatherService {
       const response = await fetch(
         `${this.baseURL}/forecast.json?key=${this.apiKey}&q=${city}&days=${days}`
       );
-      
+
       if (!response.ok) {
         throw new Error('Forecast data unavailable');
       }
@@ -222,22 +231,23 @@ class WeatherService {
 ```
 
 ### File Upload with Progress
+
 ```javascript
 function uploadFile(file, onProgress) {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
     const formData = new FormData();
-    
-    formData.append('file', file);
 
-    xhr.upload.addEventListener('progress', (event) => {
+    formData.append("file", file);
+
+    xhr.upload.addEventListener("progress", (event) => {
       if (event.lengthComputable) {
         const progress = (event.loaded / event.total) * 100;
         onProgress(Math.round(progress));
       }
     });
 
-    xhr.addEventListener('load', () => {
+    xhr.addEventListener("load", () => {
       if (xhr.status === 200) {
         resolve(JSON.parse(xhr.response));
       } else {
@@ -245,33 +255,34 @@ function uploadFile(file, onProgress) {
       }
     });
 
-    xhr.addEventListener('error', () => {
-      reject(new Error('Upload failed'));
+    xhr.addEventListener("error", () => {
+      reject(new Error("Upload failed"));
     });
 
-    xhr.open('POST', 'https://api.example.com/upload');
+    xhr.open("POST", "https://api.example.com/upload");
     xhr.send(formData);
   });
 }
 
 // Usage
 const fileInput = document.querySelector('input[type="file"]');
-fileInput.addEventListener('change', async (e) => {
+fileInput.addEventListener("change", async (e) => {
   const file = e.target.files[0];
   try {
     await uploadFile(file, (progress) => {
       console.log(`Upload progress: ${progress}%`);
     });
-    console.log('Upload complete!');
+    console.log("Upload complete!");
   } catch (error) {
-    console.error('Upload failed:', error);
+    console.error("Upload failed:", error);
   }
 });
 ```
 
 ### Caching API Responses
+
 ```javascript
-class CachedAPI {
+className CachedAPI {
   constructor(cacheDuration = 5 * 60 * 1000) { // 5 minutes default
     this.cache = new Map();
     this.cacheDuration = cacheDuration;
@@ -310,22 +321,26 @@ class CachedAPI {
 ## Best Practices
 
 1. **Error Handling**
+
    - Always implement proper error handling
    - Use try-catch blocks with async/await
    - Handle different types of errors appropriately
 
 2. **Security**
+
    - Never expose API keys in client-side code
    - Use HTTPS for all API calls
    - Implement proper authentication
 
 3. **Performance**
+
    - Implement caching when appropriate
    - Use rate limiting for API calls
    - Handle loading states in your UI
 
 4. **Code Organization**
-   - Create reusable API service classes
+
+   - Create reusable API service classNamees
    - Separate API logic from business logic
    - Use environment variables for configuration
 

@@ -1,55 +1,63 @@
 <!DOCTYPE html>
 <html>
-     <head>
-          <meta charset="utf-8">
-          <meta http-equiv="X-UA-Compatible" content="IE=edge">
-          <title>toggle class</title>
-          <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@900&display=swap" rel="stylesheet">
-          <meta name="description" content="">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <style>
-               *{
-                    margin: 0;
-                    padding: 0;
-               }    
-               html,body{
-                    width: 100%;
-                    height: 100%;
-                   
-               }
-               body{
-                    display:inline-flex;
-                    justify-content: center;
-                    align-items: center;
-                    background: linear-gradient(12deg , red , pink , green , white, black, yellow );
-               }
-              #heading{
-               background: linear-gradient(90deg , red, blue, pink);
-                font-family: Outfit;
-                -webkit-text-stroke: 2px;
-                  -webkit-background-clip: text;
-                 background-clip: text;
-                   color: transparent;
-       }
-              #btn{
+
+<head>
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <title>toggle className</title>
+     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@900&display=swap" rel="stylesheet">
+     <meta name="description" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <style>
+          * {
+               margin: 0;
+               padding: 0;
+          }
+
+          html,
+          body {
+               width: 100%;
+               height: 100%;
+
+          }
+
+          body {
+               display: inline-flex;
+               justify-content: center;
+               align-items: center;
+               background: linear-gradient(12deg, red, pink, green, white, black, yellow);
+          }
+
+          #heading {
+               background: linear-gradient(90deg, red, blue, pink);
+               font-family: Outfit;
+               -webkit-text-stroke: 2px;
+               -webkit-background-clip: text;
+               background-clip: text;
+               color: transparent;
+          }
+
+          #btn {
                width: 15%;
                max-width: width 30px;
                max-height: 30%;
-              }
-              .mode{
-                 background: black;
-              }
+          }
 
-          </style>
-     </head>
-     <body>
-          <div class="hore">
-               <input type="button" value="Mode" id="btn" />
-               <h1 id="heading" >
-         toggle class button for dark and light mode
-               </h1>
-          </div>
-          
-          <script src="script.js"  defer></script>
-     </body>
+          .mode {
+               background: black;
+          }
+     </style>
+</head>
+
+<body>
+     <div className="hore">
+          <input type="button" value="Mode" id="btn" />
+          <h1 id="heading">
+               toggle className button for dark and light mode
+          </h1>
+     </div>
+
+     <script src="script.js" defer></script>
+</body>
+
 </html>

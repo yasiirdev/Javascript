@@ -1,9 +1,9 @@
 /*
- *create a user class with 2 properties name and email . it also has a method called  viewDate() that allow
+ *create a user className with 2 properties name and email . it also has a method called  viewDate() that allow
  *view to website date.
  */
 
-class user {
+className user {
   constructor(name, email) {
     this.name = name;
     this.email = email;
@@ -17,11 +17,11 @@ class user {
 }
 
 /*
- *create a new class called admin which inherits from User . add a new method called editDate to admin that allows
+ *create a new className called admin which inherits from User . add a new method called editDate to admin that allows
  *it to edit website date
  */
 
-class admin extends user {
+className admin extends user {
   constructor(name, email) {
     super(name, email);
     this.name = name;

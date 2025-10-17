@@ -1,36 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="style.css">
-     <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
+     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
      <title>to do list</title>
 </head>
+
 <body>
-     <div class="container">
-       <div class="topnav">
-          <h1>ToDo list</h1>
-     </div>
-          <div class="nav">
-               <input type="search" name="todoSearch" id="search" class="search" placeholder="Search note...."  />
-               <select name="option" id="option" class="option" >
+     <div className="container">
+          <div className="topnav">
+               <h1>ToDo list</h1>
+          </div>
+          <div className="nav">
+               <input type="search" name="todoSearch" id="search" className="search" placeholder="Search note...." />
+               <select name="option" id="option" className="option">
                     <option value="All">All</option>
                </select>
-               <button type="button" class="ModeBtn" id="ModeBtn">Mode</button>
+               <button type="button" className="ModeBtn" id="ModeBtn">Mode</button>
           </div>
-          <div class="diolog" id="diolog" class="diolog" style="display: none;">
-               <h1 class="noteHeading">new note</h1>
-                <textarea name="myTextarea" rows="4" cols="40" wrap="soft"  class="TextInput" id="Textarea"></textarea>
-               <button type="button" class="cancelBtn" id="cancelBtn">Cancel</button>
-               <button type="button" class="applyBtn" id="applyBtn">Apply</button>
+          <div className="diolog" id="diolog" className="diolog" style="display: none;">
+               <h1 className="noteHeading">new note</h1>
+               <textarea name="myTextarea" rows="4" cols="40" wrap="soft" className="TextInput"
+                    id="Textarea"></textarea>
+               <button type="button" className="cancelBtn" id="cancelBtn">Cancel</button>
+               <button type="button" className="applyBtn" id="applyBtn">Apply</button>
+          </div>
+          <div className="notes" id="notes"></div>
+          <button type="button" id="addBtn" className="addBtn"><i className="ri-add-large-line"></i>
      </div>
-        <div class="notes" id="notes"></div>
-          <button type="button" id="addBtn" class="addBtn"><i class="ri-add-large-line"></i>
-     </div>  
-     <script src="script.js" async ></script>    
-</body>   
+     <script src="script.js" async></script>
+</body>
+
 </html>

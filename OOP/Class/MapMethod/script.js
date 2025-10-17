@@ -1,8 +1,8 @@
 
-// * A alternative maping class that provide us mapping method 
+// * A alternative maping className that provide us mapping method 
 
 
-class alternative{
+className alternative{
     map(arr , fn){
           let arr2 = [];
           for(let i = 0 ; i < arr.length ; i++){
