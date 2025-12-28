@@ -27,4 +27,17 @@ let minutes = date.getMinutes();
  let timeDate = date.getDate();
  console.log(timeDate,'date');
  
- 
+// *get full date in local formitting
+date.toLocaleDateString("en-US", {});
+//* get full time in local formitting
+date.toLocaleTimeString("en-US", {});
+
+const options = {
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+};
+// Explicitly sets format to e.g., "01/17/2025" or "17/01/2025" depending on the locale
+console.log(date.toLocaleDateString("en-Uk", options));
+console.log(date.toLocaleTimeString("en-Uk", { timeZone: "Asia/Karachi" }));
+
