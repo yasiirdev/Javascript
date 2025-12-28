@@ -1,64 +1,60 @@
-*{
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
-     text-decoration: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 html,
-body{
-    height: 100%;
-    width: 100%;
+body {
+  height: 100%;
+  width: 100%;
 }
 
-
-body{
-     display: inline-flex;
-     align-items: center;
-     justify-content: flex-start;
-     flex-direction: column;
+body {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
 }
 
-.menu{
-     width: 10%;
-     height: 6%;
-     border: none;
-     background-color: rgba(153, 0, 255, 0.219);
-     display: inline-flex;
-     align-items: center;
-     justify-content: center;
+.menu {
+  width: 10%;
+  height: 6%;
+  border: none;
+  background-color: rgba(153, 0, 255, 0.219);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.menu:hover{
-     cursor: pointer;
-     color: black;
-     font-weight: bolder;
-     background: rgba(0, 0, 0, 0.137);
+.menu:hover {
+  cursor: pointer;
+  color: black;
+  font-weight: bolder;
+  background: rgba(0, 0, 0, 0.137);
 }
 
-.option{
-     height: 40%;
-     background: black;
-     display: grid;
-     grid-template-rows: repeat(5,1fr);
-     outline: 1px solid  yellow;
-     inline-size: 15%;
-     display: none; 
-     position: absolute;
-     top: 6.5%;
-     left: 45%;
-     z-index: 1;
-   
-     
+.option {
+  height: 40%;
+  background: black;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  outline: 1px solid yellow;
+  inline-size: 15%;
+  display: none;
+  position: absolute;
+  top: 6.5%;
+  left: 45%;
+  z-index: 1;
 }
- a{
-     color: white;
-     font-weight: bolder;
-     padding: 10px;
-     border: .25px solid  transparent;
+a {
+  color: white;
+  font-weight: bolder;
+  padding: 10px;
+  border: 0.25px solid transparent;
 }
 
-a:hover{
-     border: 2px solid white;
+a:hover {
+  border: 2px solid white;
 }
-
